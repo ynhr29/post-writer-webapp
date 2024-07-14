@@ -203,7 +203,7 @@ export default function IndexPage() {
           <Link
             href={siteConfig.links.x}
             className="underline underline-offset-4"
-            target="_blanc"
+            target="_blank"
             rel="noreferrer"
           >
             お仕事はXまで
