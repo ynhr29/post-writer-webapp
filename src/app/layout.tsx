@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     name: "yonehara",
     url: siteConfig.url,
   },
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
     locale: "ja",
