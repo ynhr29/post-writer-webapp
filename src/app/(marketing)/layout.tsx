@@ -1,5 +1,5 @@
 import MainNav from "@/components/main-nav"
-import SiteFooter from "@/components/SiteFooter"
+import SiteFooter from "@/components/site-footer"
 import { buttonVariants } from "@/components/ui/button"
 import { marketingConfig } from "@/config/marketing"
 import { cn } from "@/lib/utils"
