@@ -1,5 +1,5 @@
 import DashBoardShell from "@/components/dashboard-shell"
-import DashBoardHeader from "@/components/dashboard.-header"
+import DashBoardHeader from "@/components/dashboard-header"
 import PostCreateButton from "@/components/post-create-button"
 import PostItem from "@/components/post-item"
 import { db } from "@/lib/db"
