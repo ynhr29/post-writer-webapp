@@ -44,6 +44,32 @@ export async function PATCH(
   }
 }
 
+export async function DELETE(
+  req: NextRequest,
+  context: z.infer<typeof routeContextSchema>
+) {
+  try {
+    const { params } = routeContextSchema.parse(context)
+
+    if (!(await verifyCurrentUserHasAccessToPost(params.postId))) {
+      return NextResponse.json("権限がなりリソースです", { status: 403 })
+    }
+
+    await db.post.delete({
+      where: {
+        id: params.postId,
+      },
+    })
+
+    return new Response(null, { status: 204 }) // NextResponseで204返すとエラー判定になる？らしい
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(error.issues, { status: 422 })
+    }
+    return NextResponse.json("不明なエラーが発生しました", { status: 500 })
+  }
+}
+
 // ユーザの記事かチェック
 async function verifyCurrentUserHasAccessToPost(postId: string) {
   const session = await getServerSession(authOptions)

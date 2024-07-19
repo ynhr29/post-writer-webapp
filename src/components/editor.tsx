@@ -111,7 +111,7 @@ export default function Editor({ post }: EditorProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="grid w-full gap-10">
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between ">
           <div className="flex items-center space-x-10">
             <Link
               href={"/dashboard"}
