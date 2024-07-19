@@ -9,6 +9,7 @@ const postCreateSchema = z.object({
   content: z.string().optional(),
 })
 
+// /api/posts
 export async function POST(req: NextRequest) {
   try {
     const session = await getServerSession(authOptions)

@@ -20,7 +20,7 @@ export default function PostCreateButton({
   const onClick = async () => {
     setIsLoading(true)
 
-    const response = await fetch("api/posts", {
+    const response = await fetch("/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,8 +31,6 @@ export default function PostCreateButton({
     })
 
     setIsLoading(false)
-
-    console.log(response)
 
     if (!response.ok) {
       return toast({
