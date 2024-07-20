@@ -87,9 +87,9 @@ model Post {
   published Boolean  @default(false)
   createdAt DateTime @default(now()) @map(name: "created_at")
   updatedAt DateTime @default(now()) @map(name: "updated_at")
-  authoId   String
+  authorId  String
 
-  author User @relation(fields: [authoId], references: [id])
+  author User @relation(fields: [authorId], references: [id])
 
   @@map(name: "posts")
 }

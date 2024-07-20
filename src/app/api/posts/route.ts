@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
       data: {
         title,
         content,
-        authoId: user.id,
+        authorId: user.id,
       },
       select: {
         id: true,

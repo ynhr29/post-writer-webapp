@@ -16,7 +16,7 @@ export default async function DashboardPage() {
   // いまログインしているユーザのPOSTSを取得
   const posts = await db.post.findMany({
     where: {
-      authoId: user?.id,
+      authorId: user?.id,
     },
     select: {
       id: true,
